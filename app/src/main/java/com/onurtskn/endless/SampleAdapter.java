@@ -33,6 +33,7 @@ public class SampleAdapter extends EndlessAdapter<String> {
 
     protected void notifyAdapter(List<String> list) {
         super.notifyAdapter(list, nextPage, pageCount);
+         nextPage++;
     }
 
     @Override
@@ -82,7 +83,6 @@ public class SampleAdapter extends EndlessAdapter<String> {
                 @Override
                 public void run() {
                     notifyAdapter(getStringList(nextPage));
-                    nextPage++;
                 }
             });
         }
